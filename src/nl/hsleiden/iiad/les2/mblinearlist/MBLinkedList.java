@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class MBLinkedList<E> implements MBList<E> {
 
-    private Entry<E> head // , tail;
+    private Entry<E> head;
 
     public MBLinkedList() {
         head = null;
