@@ -1,11 +1,8 @@
 package nl.hsleiden.iiad.les2.mblinearlist;
 
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
-public class MBLinkedList<E> {
+public class MBLinkedList<E> implements MBList<E> {
 
     private Entry<E> head; // , tail;
 
@@ -13,6 +10,7 @@ public class MBLinkedList<E> {
         head = null;
     }
 
+    @Override
     public boolean add(E element) {
         if(null == head)
             return addFirst(element);
@@ -33,34 +31,42 @@ public class MBLinkedList<E> {
         return true;
     }
 
+    @Override
     public int size() {
         return 0;
     }
 
+    @Override
     public boolean isEmpty() {
         return null == head;
     }
 
+    @Override
     public boolean contains(Object o) {
         return false;
     }
 
+    @Override
     public Iterator<E> iterator() {
         return new LinkedListIterator<>();
     }
 
+    @Override
     public Object[] toArray() {
         return new Object[0];
     }
 
+    @Override
     public boolean remove(Object o) {
         return false;
     }
 
+    @Override
     public void clear() {
         head = null;
     }
 
+    @Override
     public E get(int n) {
         Entry<E> temp = null, pos = head;
         for(int i = 0; i < n; i++) {
@@ -70,18 +76,22 @@ public class MBLinkedList<E> {
         return pos.getElement();
     }
 
+    @Override
     public Object set(int index, Object element) {
         return null;
     }
 
+    @Override
     public void add(int index, Object element) {
 
     }
 
-    public Object remove(int index) {
+    @Override
+    public E remove(int index) {
         return null;
     }
 
+    @Override
     public int indexOf(Object o) {
         return 0;
     }
