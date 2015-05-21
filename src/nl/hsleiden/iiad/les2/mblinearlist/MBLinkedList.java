@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class MBLinkedList<E> implements MBList<E> {
 
-    private Entry<E> head; // , tail;
+    private Entry<E> head // , tail;
 
     public MBLinkedList() {
         head = null;
@@ -33,7 +33,16 @@ public class MBLinkedList<E> implements MBList<E> {
 
     @Override
     public int size() {
-        return 0;
+        if(null == head)
+            return 0;
+        return _size(head);
+    }
+
+    private int _size(Entry<E> e) {
+        if(e.hasNext())
+            return 1 + _size(e.getNext());
+        else
+            return 1;
     }
 
     @Override
@@ -69,9 +78,11 @@ public class MBLinkedList<E> implements MBList<E> {
     @Override
     public E get(int n) {
         Entry<E> temp = null, pos = head;
+        if(null == head) return null;
         for(int i = 0; i < n; i++) {
             temp = pos;
             pos = temp.getNext();
+            if(pos == null) return null;
         }
         return pos.getElement();
     }
@@ -127,7 +138,7 @@ public class MBLinkedList<E> implements MBList<E> {
         }
     }
 
-    private class LinkedListIterator<E> implements Iterator {
+    private class LinkedListIterator<E> implements Iterator<E> {
 
         private Entry position = head;
 
