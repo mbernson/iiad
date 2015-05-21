@@ -1,8 +1,6 @@
-package nl.hsleiden.iiad.sorting;
+package nl.hsleiden.iiad.les1.sorting;
 
-import nl.hsleiden.iiad.SortingAlgorithm;
-
-import java.util.Collections;
+import nl.hsleiden.iiad.les1.SortingAlgorithm;
 
 public class QuickSort<T> implements SortingAlgorithm<T> {
 

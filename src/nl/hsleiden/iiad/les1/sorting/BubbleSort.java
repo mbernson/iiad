@@ -1,6 +1,6 @@
-package nl.hsleiden.iiad.sorting;
+package nl.hsleiden.iiad.les1.sorting;
 
-import nl.hsleiden.iiad.SortingAlgorithm;
+import nl.hsleiden.iiad.les1.SortingAlgorithm;
 
 public class BubbleSort<T extends Comparable<T>> implements SortingAlgorithm<T> {
 
@@ -15,7 +15,9 @@ public class BubbleSort<T extends Comparable<T>> implements SortingAlgorithm<T> 
             for(int i = 1; i < end; i++) {
 
                 if(list[i-1].compareTo(list[i]) > 0) {
-                    list = swap(list, i-1, i);
+                    final T temp = list[i-1];
+                    list[i-1] = list[i];
+                    list[i] = temp;
                     swapped = true;
                 }
 
@@ -25,13 +27,6 @@ public class BubbleSort<T extends Comparable<T>> implements SortingAlgorithm<T> 
 
         } while(swapped);
 
-        return list;
-    }
-
-    private T[] swap(T[] list, int a, int b) {
-        final T temp = list[a];
-        list[a] = list[b];
-        list[b] = temp;
         return list;
     }
 

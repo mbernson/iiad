@@ -1,8 +1,7 @@
-package nl.hsleiden.iiad;
+package nl.hsleiden.iiad.les1;
 
-import nl.hsleiden.iiad.searching.LinearSearch;
-import nl.hsleiden.iiad.sorting.BubbleSort;
-import nl.hsleiden.iiad.sorting.QuickSort;
+import nl.hsleiden.iiad.les1.searching.LinearSearch;
+import nl.hsleiden.iiad.les1.sorting.BubbleSort;
 
 public class Main {
 

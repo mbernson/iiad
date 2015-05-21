@@ -1,6 +1,6 @@
-package nl.hsleiden.iiad.searching;
+package nl.hsleiden.iiad.les1.searching;
 
-import nl.hsleiden.iiad.SearchAlgorithm;
+import nl.hsleiden.iiad.les1.SearchAlgorithm;
 
 public class BinarySearch<T extends Comparable<T>> implements SearchAlgorithm<T> {
 
