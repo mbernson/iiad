@@ -5,7 +5,8 @@ import java.util.List;
 
 public class LinkedListMain {
     public static void main(String[] args) {
-        MBLinkedList<String> list = new MBLinkedList<>();
+        MBList<String> list = new MBDoublyLinkedList<>();
+
         list.add("Bart");
         list.add("Mathijs");
         list.add("Reyer");
@@ -13,6 +14,7 @@ public class LinkedListMain {
 
         System.out.println("Element 2 is:");
         System.out.println(list.get(2));
+
         Iterator<String> iter = list.iterator();
 
         System.out.println("Alle elementen:");
