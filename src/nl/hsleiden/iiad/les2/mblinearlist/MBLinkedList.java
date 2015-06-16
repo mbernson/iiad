@@ -55,7 +55,16 @@ public class MBLinkedList<E> implements MBList<E> {
 
     @Override
     public Object[] toArray() {
-        return new Object[size];
+        Object[] arr = new Object[size];
+        if(isEmpty()) {
+            return arr;
+        }
+        Entry temp = head;
+        for(int i = 0; i < size; i++) {
+            arr[i] = temp.getElement();
+            temp = temp.getNext();
+        }
+        return arr;
     }
 
     @Override
@@ -71,7 +80,7 @@ public class MBLinkedList<E> implements MBList<E> {
 
     @Override
     public E get(int n) {
-        Entry temp = null, pos = head;
+        Entry temp, pos = head;
         if(null == head) return null;
         for(int i = 0; i < n; i++) {
             temp = pos;
@@ -137,10 +146,6 @@ public class MBLinkedList<E> implements MBList<E> {
         return 0;
     }
 
-    public int lastIndexOf(Object o) {
-        return 0;
-    }
-
     final private class Entry {
         private E element;
         private Entry next;
@@ -169,7 +174,6 @@ public class MBLinkedList<E> implements MBList<E> {
     }
 
     final private class LinkedListIterator implements Iterator<E> {
-
         private Entry position = head;
 
         @Override

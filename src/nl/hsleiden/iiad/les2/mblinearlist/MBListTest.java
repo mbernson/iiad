@@ -134,7 +134,7 @@ public class MBListTest extends TestCase {
         list.add("Mathijs");
         list.add("Henk");
         Object[] arr = list.toArray();
-        assertEquals(arr.length, 2);
+        assertEquals(2, arr.length);
     }
 
     @Test
