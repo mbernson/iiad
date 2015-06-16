@@ -81,6 +81,8 @@ public abstract class ListTestBase extends TestCase {
         assertTrue(list.isEmpty());
         list.add("Mathijs");
         assertFalse(list.isEmpty());
+        list.clear();
+        assertTrue(list.isEmpty());
     }
 
     @Test

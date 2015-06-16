@@ -12,6 +12,7 @@ public class LinkedList<E> implements List<E> {
             addFirst(element);
         else
             appendNext(element, head);
+        size++;
     }
 
     private boolean addFirst(E element) {
@@ -34,7 +35,7 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public boolean isEmpty() {
-        return size > 0;
+        return size == 0;
     }
 
     @Override
@@ -79,10 +80,10 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public E get(int n) {
+    public E get(int index) {
         Entry temp, pos = head;
         if(null == head) return null;
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < index; i++) {
             temp = pos;
             pos = temp.getNext();
             if(pos == null) return null;
@@ -102,17 +103,15 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public void push(E element) {
-        if(null == head)
-            addFirst(element);
-        else
-            appendNext(element, head);
+        add(element);
     }
 
     private Entry getTail() {
-        Iterator<E> iter = iterator();
+        if(null == head) {
+            return null;
+        }
         Entry temp = head;
-        if (null == temp) return null;
-        for(int i = 0; i < size; i++) {
+        while(temp.hasNext()) {
             temp = temp.getNext();
         }
         return temp;
@@ -123,22 +122,37 @@ public class LinkedList<E> implements List<E> {
         if(null == head) {
             return null;
         }
-        Entry entry = head;
-        head = entry.getNext();
-        return entry.getElement();
+        Entry temp = head, previous = null;
+        while(temp.hasNext()) {
+            previous = temp;
+            temp = temp.getNext();
+        }
+        if(null == previous)
+            head = null;
+        else
+            previous.next = null;
+        size--;
+        return temp.getElement();
     }
 
     @Override
     public E shift() {
-        Entry tail = getTail();
-        tail.next.next = null;
+        if(null == head) {
+            return null;
+        }
 
-        return tail.getElement();
+        Entry temp = head;
+        head = temp.getNext();
+        size--;
+
+        return temp.getElement();
     }
 
     @Override
     public void unshift(E element) {
-
+        Entry temp = head;
+        head = new Entry(element, temp);
+        size++;
     }
 
     @Override

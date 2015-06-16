@@ -3,6 +3,9 @@ package iiad.les2.linearlist;
 import java.util.Iterator;
 
 public interface List<E> {
+    /**
+     * Get the amount of elements currently in the list.
+     */
     int size();
 
     boolean isEmpty();
@@ -24,8 +27,19 @@ public interface List<E> {
      */
     void clear();
 
-    E get(int n);
+    /**
+     * Get the element at index.
+     * @param index
+     * @return
+     */
+    E get(int index);
 
+    /**
+     * Set the element at index.
+     * @param index
+     * @param element
+     * @return
+     */
     E set(int index, E element);
 
     /**
@@ -52,6 +66,7 @@ public interface List<E> {
 
     /**
      * Shift an element off the beginning of the list and return it.
+     * @return
      */
     E shift();
 

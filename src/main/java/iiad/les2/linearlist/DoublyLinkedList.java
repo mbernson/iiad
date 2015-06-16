@@ -61,12 +61,12 @@ public class DoublyLinkedList<E> implements List<E> {
     }
 
     @Override
-    public E get(int n) {
+    public E get(int index) {
         if (null == tail) {
             return null;
         }
         Entry temp = tail;
-        for(int i = 0; i < n; i++) {
+        for(int i = 0; i < index; i++) {
             if (null == temp)
                 return null;
             temp = temp.getNext();
