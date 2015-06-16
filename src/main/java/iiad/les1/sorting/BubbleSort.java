@@ -1,8 +1,6 @@
 package iiad.les1.sorting;
 
-import iiad.les1.SortingAlgorithm;
-
-public class BubbleSort<T extends Comparable<T>> implements SortingAlgorithm<T> {
+public class BubbleSort<T extends Comparable<T>> implements Sortable<T> {
 
     @Override
     public T[] sort(T[] list) {

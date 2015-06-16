@@ -1,8 +1,6 @@
 package iiad.les1.sorting;
 
-import iiad.les1.SortingAlgorithm;
-
-public class QuickSort<T> implements SortingAlgorithm<T> {
+public class QuickSort<T> implements Sortable<T> {
 
     @Override
     public T[] sort(T[] list) {

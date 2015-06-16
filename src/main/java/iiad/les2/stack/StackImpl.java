@@ -1,16 +1,16 @@
 package iiad.les2.stack;
 
 public class StackImpl<E> implements Stack<E> {
-    private Entry head;
+    private Entry tail;
     private int size = 0;
 
     @Override
     public E pop() {
-        if (null == head) {
+        if (null == tail) {
             return null;
         }
-        Entry temp = head;
-        head = temp.getPrevious();
+        Entry temp = tail;
+        tail = temp.getPrevious();
         size--;
         return temp.getElement();
     }
@@ -20,14 +20,14 @@ public class StackImpl<E> implements Stack<E> {
         if (isEmpty()) {
             return null;
         }
-        return head.getElement();
+        return tail.getElement();
     }
 
     @Override
     public void push(E element) {
         size++;
-        Entry entry = new Entry(element, head);
-        head = entry;
+        Entry entry = new Entry(element, tail);
+        tail = entry;
     }
 
     @Override

@@ -1,15 +1,17 @@
 package iiad.les1;
 
 import iiad.les1.searching.LinearSearch;
+import iiad.les1.searching.Searchable;
 import iiad.les1.sorting.BubbleSort;
+import iiad.les1.sorting.Sortable;
 
 public class Main {
 
     public static void main(String[] args) {
         final Character[] rij = {'M', 'H', 'O', 'G', 'P', 'F', 'Z', 'D', 'A', 'K'};
 
-        SortingAlgorithm<Character> sort = new BubbleSort<>();
-        SearchAlgorithm<Character> search = new LinearSearch<>();
+        Sortable<Character> sort = new BubbleSort<>();
+        Searchable<Character> search = new LinearSearch<>();
 
         final long start, end;
         start = System.currentTimeMillis();

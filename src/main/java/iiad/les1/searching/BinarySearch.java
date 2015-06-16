@@ -1,11 +1,9 @@
 package iiad.les1.searching;
 
-import iiad.les1.SearchAlgorithm;
-
-public class BinarySearch<T extends Comparable<T>> implements SearchAlgorithm<T> {
+public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 
     @Override
-    public T search(T[] items, T target) {
+    public int search(T[] items, T target) {
         final int min = 0, max = items.length;
         int i = (max - min) / 2;
 
@@ -13,7 +11,7 @@ public class BinarySearch<T extends Comparable<T>> implements SearchAlgorithm<T>
 //            if(i)
 //        }
 
-        return null;
+        return -1;
     }
 
 }

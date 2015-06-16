@@ -1,16 +1,16 @@
 package iiad.les1.searching;
 
-import iiad.les1.SearchAlgorithm;
-
-public class LinearSearch<T> implements SearchAlgorithm<T> {
+public class LinearSearch<T> implements Searchable<T> {
 
     @Override
-    public T search(T[] items, T target) {
+    public int search(T[] items, T target) {
+        int index = 0;
         for(T item : items) {
             if(item.equals(target))
-                return item;
+                return index;
+            index++;
         }
-        return null;
+        return -1;
     }
 
 }
