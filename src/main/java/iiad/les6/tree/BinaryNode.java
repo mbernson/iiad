@@ -165,7 +165,8 @@ public class BinaryNode<E> {
             type = "Child";
 
         String indent = "";
-        for(int i = 0; i < indentation; i++) indent += "    ";
+        for(int i = 0; i < indentation; i++)
+            indent += "    ";
 
         System.out.printf("%s└── %s node with value '%s'\n", indent, type, node.toString());
 
