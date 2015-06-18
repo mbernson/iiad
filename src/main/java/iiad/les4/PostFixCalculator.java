@@ -5,9 +5,6 @@ import iiad.les2.stack.StackImpl;
 
 import java.util.StringTokenizer;
 
-/**
- * Created by mathijs on 16-6-2015.
- */
 public class PostFixCalculator {
 
     private String input;
