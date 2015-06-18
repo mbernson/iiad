@@ -2,7 +2,11 @@ package iiad.les1.sorting;
 
 import java.lang.reflect.Array;
 
+<<<<<<< HEAD
 public class MergeSort<T extends Comparable<T>> implements Sortable<T> {
+=======
+public class MergeSort<T> implements Sortable<T> {
+>>>>>>> 09fdba4947e653537b9ac850d638e151bba3a0d8
 
     @Override
     public T[] sort(T[] list) {

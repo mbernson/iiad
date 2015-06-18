@@ -3,7 +3,8 @@ package iiad.les1.sorting;
 public class BubbleSortTest extends SortableTestBase {
 
     @Override
-    public Sortable<String> newInstance() {
+    public Sortable<Integer> newInstance() {
         return new BubbleSort<>();
     }
+
 }
