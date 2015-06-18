@@ -1,4 +1,4 @@
-package iiad.les6;
+package iiad.les6.tree;
 
 // Klasse voor een knoop voor een binaire boom
 public class BinaryNode<E> {
@@ -147,5 +147,31 @@ public class BinaryNode<E> {
 
         return depth;
     }
+
+    public void print() {
+        System.out.println(".");
+        _print(this, 0);
+    }
+
+    private static void _print(final BinaryNode node, final int indentation) {
+        if(null == node) {
+            return;
+        }
+
+        final String type;
+        if(indentation == 0)
+            type = "Root";
+        else
+            type = "Child";
+
+        String indent = "";
+        for(int i = 0; i < indentation; i++) indent += "    ";
+
+        System.out.printf("%s└── %s node with value '%s'\n", indent, type, node.toString());
+
+        _print(node.getLeftChild(), indentation + 1);
+        _print(node.getRightChild(), indentation + 1);
+    }
+
 }
 

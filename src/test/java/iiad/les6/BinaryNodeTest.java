@@ -1,5 +1,6 @@
 package iiad.les6;
 
+import iiad.les6.tree.BinaryNode;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
