@@ -159,7 +159,10 @@ public abstract class ListTestBase extends TestCase {
         assertNull(list.get(1));
 
         list.add("Hoi");
-        assertSame(list.get(0), "Hoi");
+        assertEquals(list.get(0), "Hoi");
+
+        list.add("Doei");
+        assertEquals(list.get(1), "Doei");
     }
 
 }

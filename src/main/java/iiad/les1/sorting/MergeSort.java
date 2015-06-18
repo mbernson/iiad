@@ -2,9 +2,6 @@ package iiad.les1.sorting;
 
 import java.lang.reflect.Array;
 
-/**
- * Created by mathijs on 16-6-2015.
- */
 public class MergeSort<T> implements Sortable<T> {
 
     @Override

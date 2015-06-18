@@ -6,12 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 public abstract class SortableTestBase extends TestCase {
 
-    private Sortable<String> sortable;
+    private Sortable<Integer> sortable;
 
-    public abstract Sortable<String> newInstance();
+    public abstract Sortable<Integer> newInstance();
 
     @Before
     public void setUp() throws Exception {
@@ -25,6 +27,17 @@ public abstract class SortableTestBase extends TestCase {
 
     @Test
     public void testSort() throws Exception {
+        Integer[] arr = new Integer[] {
+                5, 2, 3, 1, 0, 4
+        };
 
+        Integer[] sorted = sortable.sort(arr);
+
+        assertNotNull(sorted);
+        assertEquals(arr.length, sorted.length);
+        assertArrayEquals(sorted, new Integer[]{0, 1, 2, 3, 4, 5});
+
+        assertSame(sorted[0], Integer.valueOf(0));
+        assertSame(sorted[5], Integer.valueOf(5));
     }
 }

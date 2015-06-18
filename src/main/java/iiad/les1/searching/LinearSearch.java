@@ -10,7 +10,7 @@ public class LinearSearch<T> implements Searchable<T> {
                 return index;
             index++;
         }
-        return -1;
+        return NOT_FOUND;
     }
 
 }
