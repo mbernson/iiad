@@ -4,14 +4,14 @@ public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 
     @Override
     public int search(T[] items, T target) {
-        final int min = 0, max = items.length;
-        int i = (max - min) / 2;
+        int low = 0,
+            high = items.length - 1;
 
-//        while(true) {
-//            if(i)
-//        }
+        while(low <= high) {
 
-        return -1;
+        }
+
+        return NOT_FOUND;
     }
 
 }

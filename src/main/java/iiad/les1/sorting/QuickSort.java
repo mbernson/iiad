@@ -1,6 +1,6 @@
 package iiad.les1.sorting;
 
-public class QuickSort<T> implements Sortable<T> {
+public class QuickSort<T extends Comparable<T>> implements Sortable<T> {
 
     @Override
     public T[] sort(T[] list) {
