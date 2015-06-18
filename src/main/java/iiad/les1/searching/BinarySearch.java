@@ -7,6 +7,15 @@ public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
     @Override
     public int search(T[] items, T target) {
         int low = 0,
+<<<<<<< HEAD
+            high = items.length - 1;
+
+        while(low <= high) {
+//            int middle = low + (high - low) / 2;
+//            if      (target.compareTo(items[middle])) hi = mid - 1;
+//            else if (key > a[mid]) lo = mid + 1;
+//            else return mid;
+=======
             mid,
             high = items.length - 1;
 
@@ -20,6 +29,7 @@ public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
             } else {
                 return mid;
             }
+>>>>>>> 09fdba4947e653537b9ac850d638e151bba3a0d8
         }
 
         return NOT_FOUND;

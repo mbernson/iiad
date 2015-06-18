@@ -7,9 +7,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by mathijs on 16-6-2015.
- */
 public class PostFixCalculatorTest extends TestCase {
     private PostFixCalculator calculator;
 
@@ -43,6 +40,15 @@ public class PostFixCalculatorTest extends TestCase {
 
         calculator = new PostFixCalculator(" blah ");
         assertEquals(calculator.getResult(), 0);
+    }
+
+    @Test
+    public void testUnaryOperators() {
+        calculator = new PostFixCalculator("8 s");
+        assertEquals(calculator.getResult(), 64);
+
+        calculator = new PostFixCalculator("2 c");
+        assertEquals(calculator.getResult(), 8);
     }
 
 }
