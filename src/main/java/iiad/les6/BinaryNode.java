@@ -1,19 +1,19 @@
 package iiad.les6;
 
 // Klasse voor een knoop voor een binaire boom
-public class BKnoop<E> {
-    private BKnoop<E> parent, leftChild, rightChild;
+public class BinaryNode<E> {
+    private BinaryNode<E> parent, leftChild, rightChild;
 
     private E userObject;
 
     public static final int LEFT = 0, RIGHT = 1;
 
     // Constructors
-    public BKnoop() {
+    public BinaryNode() {
         this( null );
     }
 
-    public BKnoop( E userObject ) {
+    public BinaryNode(E userObject) {
         parent = null;
         leftChild = null;
         rightChild = null;
@@ -21,7 +21,7 @@ public class BKnoop<E> {
     }
 
     // Methoden
-    public void add( BKnoop<E> newChild ) {
+    public void add( BinaryNode<E> newChild ) {
         if( leftChild == null )
             insert( newChild, LEFT );
         else
@@ -36,19 +36,19 @@ public class BKnoop<E> {
         return userObject;
     }
 
-    public BKnoop<E> getLeftChild() {
+    public BinaryNode<E> getLeftChild() {
         return leftChild;
     }
 
-    public BKnoop<E> getRightChild() {
+    public BinaryNode<E> getRightChild() {
         return rightChild;
     }
 
-    public BKnoop<E> getParent() {
+    public BinaryNode<E> getParent() {
         return parent;
     }
 
-    public void insert( BKnoop<E> newChild, int childIndex ) {
+    public void insert( BinaryNode<E> newChild, int childIndex ) {
         if( isAncestor( newChild ) )
             throw new IllegalArgumentException(
                     "Nieuw kind is voorouder" );
@@ -58,7 +58,7 @@ public class BKnoop<E> {
                     "Index moet 0 of 1 zijn" );
 
         if( newChild != null ) {
-            BKnoop<E> oldParent = newChild.getParent();
+            BinaryNode<E> oldParent = newChild.getParent();
             if( oldParent != null )
                 oldParent.remove( newChild );
         }
@@ -70,20 +70,20 @@ public class BKnoop<E> {
             rightChild = newChild;
     }
 
-    public boolean isChild( BKnoop<E> aNode ) {
+    public boolean isChild( BinaryNode<E> aNode ) {
         return aNode == null?
                 false :
                 aNode.getParent() == this;
     }
 
-    public boolean isAncestor( BKnoop<E> aNode ) {
-        BKnoop<E> ancestor = this;
+    public boolean isAncestor( BinaryNode<E> aNode ) {
+        BinaryNode<E> ancestor = this;
         while( ancestor != null && ancestor != aNode )
             ancestor = ancestor.getParent();
         return ancestor != null;
     }
 
-    public void remove( BKnoop<E> aChild ) {
+    public void remove( BinaryNode<E> aChild ) {
         if( aChild == null )
             throw new IllegalArgumentException(
                     "Argument is null" );
@@ -105,43 +105,43 @@ public class BKnoop<E> {
         return userObject.toString();
     }
 
-    public int aantalKnopen() {
+    public int nodeCount() {
         int total = 1;
 
         if(null != leftChild)
-            total += leftChild.aantalKnopen();
+            total += leftChild.nodeCount();
 
         if(null != rightChild)
-            total += rightChild.aantalKnopen();
+            total += rightChild.nodeCount();
 
         return total;
     }
 
-    public int aantalBladen() {
+    public int leafCount() {
         if(null == leftChild && null == rightChild) {
             return 1;
         }
         int count = 0;
 
         if(null != leftChild)
-            count += leftChild.aantalBladen();
+            count += leftChild.leafCount();
 
         if(null != rightChild)
-            count += rightChild.aantalBladen();
+            count += rightChild.leafCount();
 
         return count;
     }
 
-    public int diepte() {
+    public int depth() {
         int depth = 1,
             rDepth = 0,
             lDepth = 0;
 
         if(null != leftChild)
-            lDepth = leftChild.diepte();
+            lDepth = leftChild.depth();
 
         if(null != rightChild)
-            rDepth = rightChild.diepte();
+            rDepth = rightChild.depth();
 
         depth += lDepth > rDepth ? lDepth : rDepth;
 
