@@ -7,4 +7,7 @@ public class LinearSearchTest extends SearchableTestBase {
         return new LinearSearch<>();
     }
 
+    @Override
+    public void testSearch() {
+    }
 }
