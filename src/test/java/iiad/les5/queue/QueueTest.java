@@ -8,9 +8,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertNull;
 
-/**
- * Created by mathijs on 16-6-2015.
- */
 public class QueueTest extends TestCase {
     private Queue<String> queue;
 
@@ -35,9 +32,11 @@ public class QueueTest extends TestCase {
         queue.enqueue("Bar");
         queue.enqueue("Baz");
 
-        assertEquals(queue.dequeue(), "Baz");
-        assertEquals(queue.dequeue(), "Bar");
         assertEquals(queue.dequeue(), "Foo");
+        assertEquals(queue.dequeue(), "Bar");
+        assertEquals(queue.dequeue(), "Baz");
+
+        assertNull(queue.dequeue());
     }
 
     @Test
@@ -48,12 +47,13 @@ public class QueueTest extends TestCase {
         assertEquals(queue.front(), "Foo");
 
         queue.enqueue("Bar");
-        assertEquals(queue.front(), "Bar");
-
-        queue.dequeue();
         assertEquals(queue.front(), "Foo");
+        assertEquals(queue.dequeue(), "Foo");
+        assertEquals(queue.dequeue(), "Bar");
 
+        queue.enqueue("Baz");
         queue.dequeue();
+
         assertNull(queue.front());
     }
 

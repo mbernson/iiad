@@ -131,7 +131,6 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public void unshift(E element) {
-        size++;
         Entry entry = new Entry(element);
         if (null == tail) {
             head = tail = entry;
@@ -140,6 +139,7 @@ public class DoublyLinkedList<E> implements List<E> {
         entry.setNext(tail);
         tail.setPrevious(entry);
         tail = entry;
+        size++;
     }
 
     final private class Entry {

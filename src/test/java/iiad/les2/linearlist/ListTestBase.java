@@ -36,15 +36,24 @@ public abstract class ListTestBase extends TestCase {
     }
 
     @Test
-    public void testShiftingAndUnshifting() {
+    public void testShifting() {
         assertNull(list.shift());
 
-        list.unshift("Mathijs");
-        list.unshift("Reyer");
+        list.push("Reyer");
+        list.push("Mathijs");
 
         assertEquals(list.shift(), "Reyer");
         assertEquals(list.shift(), "Mathijs");
         assertNull(list.shift());
+    }
+
+    @Test
+    public void testUnshifting() {
+        list.unshift("Mathijs");
+        list.unshift("Reyer");
+
+        assertEquals(list.pop(), "Mathijs");
+        assertEquals(list.pop(), "Reyer");
     }
 
     @Test
