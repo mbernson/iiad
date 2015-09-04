@@ -48,7 +48,9 @@ public class QueueTest extends TestCase {
 
         queue.enqueue("Bar");
         assertEquals(queue.front(), "Foo");
+
         assertEquals(queue.dequeue(), "Foo");
+        assertEquals(queue.front(), "Bar");
         assertEquals(queue.dequeue(), "Bar");
 
         queue.enqueue("Baz");

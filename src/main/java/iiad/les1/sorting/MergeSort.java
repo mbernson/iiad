@@ -9,13 +9,10 @@ public class MergeSort<T extends Comparable<T>> implements Sortable<T> {
         if(list.length <= 1)
             return list;
 
-        T[] result = null;
+        T[] result = list;
 
         if(list.length % 2 == 0) {
-//            T[] left =  newArray(list.length / 2),
-//                right = new T[list.length / 2];
         } else {
-
         }
 
         return result;

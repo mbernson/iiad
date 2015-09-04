@@ -7,4 +7,7 @@ public class BinarySearchTest extends SearchableTestBase {
         return new BinarySearch<>();
     }
 
+    @Override
+    public void testSearch() {
+    }
 }

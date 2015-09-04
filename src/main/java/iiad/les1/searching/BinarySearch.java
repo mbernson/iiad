@@ -1,7 +1,5 @@
 package iiad.les1.searching;
 
-import iiad.les1.sorting.Sortable;
-
 public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 
     @Override
